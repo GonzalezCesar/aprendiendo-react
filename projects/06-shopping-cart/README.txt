@@ -1,0 +1,4 @@
+- [] Agregar un buscador que que filtre las letras que coloque el usuario. Ejemplo: LA 
+- [] Agregar una descripción con una navegación y que permita agregar al carrito tambíen. Agregar una reseña
+- [] Agregar a cada producto un corazon o entrella reaccionable para que el usuario guarde eso en una lista de deseos
+- [] Investigar si se pude usar pruebas unitarias
