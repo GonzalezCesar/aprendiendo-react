@@ -77,8 +77,7 @@ function reducer(state: State, action: Action) {
 
   return state;
 }
-// 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
-// sk-proj-Rl0v2Jh0sO0tbMn76SaBT3BlbkFJyNL0OhKOD1H3cxd4hgT0
+
 export function useStore() {
   // 3. Use the reducer
   const [{ fromLanguage, toLanguage, fromText, result, loading }, dispatch] =
