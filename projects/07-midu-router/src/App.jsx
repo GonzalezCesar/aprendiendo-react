@@ -6,7 +6,7 @@ import Page404 from "./pages/404";
 import { Router } from "./Router";
 import { Route } from "./Route";
 
-const LazyHomePage = lazy(() => import('./pages/About.jsx'))
+const LazyHomePage = lazy(() => import('./pages/Home.jsx'))
 const LazyAboutPage = lazy(() => import('./pages/About.jsx')); //import Dinamico
 
 const appRoutes = [

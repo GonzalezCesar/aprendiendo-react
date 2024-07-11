@@ -9,6 +9,7 @@ export function Router({
   defaultComponent: DefaultComponent = () => <h1>404</h1>,
 }) {
   const [currentPath, setCurrentPath] = useState(getCurrentPath());
+
   useEffect(() => {
     const onLocationChange = () => {
       setCurrentPath(getCurrentPath());
@@ -44,5 +45,9 @@ export function Router({
     return true;
   })?.Component;
 
-  return Page ? <Page routeParams={routeParams} /> : <DefaultComponent />;
+  return Page ? (
+    <Page routeParams={routeParams} /> 
+  ) : (
+    <DefaultComponent routeParams={routeParams}/>
+  );
 }
