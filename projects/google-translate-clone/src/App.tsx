@@ -37,8 +37,8 @@ function App() {
         if (result == null) return
         setResult(result)
       })
-      .catch((pene) => { setResult('Error') 
-        console.log(pene)
+      .catch(() => { setResult('Error') 
+        
       })
   }, [debouncedFromText, fromLanguage, toLanguage]) 
 
@@ -48,7 +48,7 @@ function App() {
 
   const handleSpeak = () => {
     const utterance = new SpeechSynthesisUtterance(result)
-    utterance.lang = VOICE_FOR_LANGUAGE[toLanguage]
+    utterance.lang = 'en-AU'
     //utterance.rate = 0.80 para calibrar la velocidad de la voz
     speechSynthesis.speak(utterance)
   }
@@ -96,14 +96,13 @@ function App() {
           <div style={{ position: 'relative'}}>
           <TextArea
             loading={loading}
-
             type={SectionType.To}
             value={result}
             onChange={setResult}
           />
           <div style={{ position: 'absolute', left: 0, bottom: 0, display: 'flex' }}>
           <Button 
-          variant="link" 
+            variant="link" 
             onClick={handleClipboard}>
               <ClipboardIcon />
           </Button>

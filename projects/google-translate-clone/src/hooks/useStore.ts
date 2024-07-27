@@ -15,21 +15,21 @@ const initialState: State = {
 function reducer(state: State, action: Action) {
   const { type } = action;
 
-  if (type === "INTERCHANGE_LANGUAGES") {
-    // lógica del estado dentro del reducer
-    // porque lo evitamos en los componentes
-    if (state.fromLanguage === AUTO_LANGUAGE) return state
+if (type === "INTERCHANGE_LANGUAGES") {
+    if (state.fromLanguage === AUTO_LANGUAGE) return state;
 
-    const loading = state.fromText !== ''  
-
+    const loading = state.fromText !== '';
+    
     return {
       ...state,
+      fromText: state.result,
       loading,
       result: '',
       fromLanguage: state.toLanguage,
       toLanguage: state.fromLanguage,
     };
-  }
+}
+
 
   if (type === "SET_FROM_LANGUAGE") {
     if (state.fromLanguage === action.payload) return state
@@ -84,8 +84,8 @@ export function useStore() {
     useReducer(reducer, initialState);
 
   const interchangeLanguages = () => {
-    dispatch({ type: "INTERCHANGE_LANGUAGES" });
-  };
+    dispatch({ type: 'INTERCHANGE_LANGUAGES' })
+  }
 
   const setFromLanguage = (payload: FromLanguage) => {
     dispatch({ type: "SET_FROM_LANGUAGE", payload });
